@@ -9,12 +9,12 @@
 //Class Volkaswagen
 
 class Car {
-    constructor( gearbox, wheels, seats, windows, sidemirrors, engine, clutch, brake) {
-        this.gearbox = gearbox
+    constructor( gearBox, wheels, seats, windows, sideMirrors, engine, clutch, brake) {
+        this.gearBox = gearBox
         this.wheels = wheels
         this.seats = seats
         this.windows = windows
-        this.sidemirrors = sidemirrors
+        this.sideMirrors = sideMirrors
         this.engine = engine
         this.clutch = clutch
         this.brake = brake
@@ -26,13 +26,17 @@ class Car {
         return this.car
     }
 
-    getcarInfo() {
+    set setCar(car) {
+        this.car.push(car)
+    }
+
+    geCarInfo() {
         let car = this.car.length > 0 && this.car.slice(0, this.car.length - 1).join(', ')+
         ` and ${this.car[this.car.length - 1]}`
         let formattedCar = car ? ` the car ${car}` : ''
 
-        let info = `with ${this.gearbox}, and it has ${this.wheels} holding a ${this.seats} capacity.
-        Not only does it has ${this.sidemirrors}, it has a powerful ${this.engine} and ${this.clutch} and
+        let info = `with ${this.gearBox}, and it has ${this.wheels} holding a ${this.seats} capacity.
+        Not only does it has ${this.sideMirrors}, it has a powerful ${this.engine} and ${this.clutch} and
         ${this.brake} too. ${formattedCar}`
         return info
     }
@@ -42,4 +46,5 @@ const car1 = new Car('gear 1', '4 wheels', '2 seater', '2 windows', '2 sidemirro
 
 car1.car = 'Toyota'
 
-console.log(car1)
+console.log(car1.getCar)
+console.log(car1.getCarInfo())
