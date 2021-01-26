@@ -30,12 +30,11 @@ class Car {
         this.car.push(car)
     }
 
-    geCarInfo() {
-        let car = this.car.length > 0 && this.car.slice(0, this.car.length - 1).join(', ')+
-        ` and ${this.car[this.car.length - 1]}`
+    getCarInfo() {
+        let car = this.car.length 
         let formattedCar = car ? ` the car ${car}` : ''
 
-        let info = `with ${this.gearBox}, and it has ${this.wheels} holding a ${this.seats} capacity.
+        let info = `in ${this.gearBox}, and it has ${this.wheels} holding a ${this.seats} capacity.
         Not only does it has ${this.sideMirrors}, it has a powerful ${this.engine} and ${this.clutch} and
         ${this.brake} too. ${formattedCar}`
         return info
@@ -44,7 +43,7 @@ class Car {
 
 const car1 = new Car('gear 1', '4 wheels', '2 seater', '2 windows', '2 sidemirrors', '1 engine', '2 clutchs', 'breaks')
 
-car1.car = 'Toyota'
+car1.car = 'Toyota Mazda'
 
 console.log(car1.getCar)
 console.log(car1.getCarInfo())
